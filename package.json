@@ -1,0 +1,29 @@
+{
+  "name": "@zero86/react-clone-root",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run dev -w @zero86/react-clone",
+    "build": "npm run build -w @zero86/react-clone",
+    "serve": "npm run serve -w @zero86/react-clone",
+    "lint:components": "eslint --ext .js,.ts,.jsx,.tsx ./packages/components",
+    "lint:react-clone": "eslint --ext .js,.ts,.jsx,.tsx ./packages/react-clone",
+    "lint:fix:components": "eslint --fix --ext .js,.ts,.jsx,.tsx ./packages/components",
+    "format:fix:react-clone": "eslint --fix --ext .js,.ts,.jsx,.tsx ./packages/react-clone"
+  },
+  "author": "katanazero86",
+  "license": "ISC",
+  "workspaces": [
+    "packages\\*"
+  ],
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-react": "^7.29.4",
+    "prettier": "^2.6.2"
+  }
+}
