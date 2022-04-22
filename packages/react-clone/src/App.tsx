@@ -7,8 +7,6 @@ import { Example } from '@zero86/components';
 function App() {
   const [count, setCount] = useState(0);
 
-  const name = 'zz';
-
   return (
     <div className="App">
       <header className="App-header">
