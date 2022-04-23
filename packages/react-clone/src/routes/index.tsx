@@ -1,21 +1,21 @@
 import * as React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { AuthContext } from '../src/contexts/AuthContext';
+import { AuthContext } from '../contexts/AuthContext';
 import RequireAuth from './RequireAuth';
 
-const Home = React.lazy(() => import('../src/pages/Home/Home'));
-const Signin = React.lazy(() => import('../src/pages/Signin/Signin'));
-const Signup = React.lazy(() => import('../src/pages/Signup/Signup'));
+const Home = React.lazy(() => import('../pages/Home/Home'));
+const Signin = React.lazy(() => import('../pages/Signin/Signin'));
+const Signup = React.lazy(() => import('../pages/Signup/Signup'));
 
 function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = React.useState<any>(null);
 
-  const signin = (newUser: any, callback: VoidFunction) => {
+  const signin = (targetUser: any, callback: VoidFunction) => {
     setUser({
       me: {
-        id: newUser.id,
+        id: targetUser.id,
       },
-      token: newUser.token,
+      token: targetUser.token,
     });
     if (callback) callback();
   };
