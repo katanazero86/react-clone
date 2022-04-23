@@ -1,0 +1,30 @@
+@import "../functions/functions";
+
+@mixin render-col($type) {
+  @for $i from 1 to 13 {
+    .col#{$type}-#{$i} {
+      flex-grow : 0;
+      flex-shrink : 0;
+      flex-basis : get-size($i);
+      max-width: get-size($i);
+    }
+  }
+}
+
+$xs : 375px;
+$sm : 576px;
+$md : 768px;
+$lg : 1024px;
+
+@mixin responsive($range) {
+  @if $range == xs {
+    @media (min-width: $xs) { @content; }
+  } @else if $range == sm {
+    @media (min-width: $sm) { @content; }
+  } @else if $range == md {
+    @media (min-width: $md) { @content; }
+  } @else if $range == lg {
+    @media (min-width: $lg) { @content; }
+  }
+}
+

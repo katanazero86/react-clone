@@ -1,0 +1,52 @@
+@import "./mixins/mixins";
+
+@include responsive(xs) {
+  @include render-col('');
+}
+
+@include responsive(sm) {
+  @include render-col('-sm');
+}
+
+@include responsive(md) {
+  @include render-col('-md');
+}
+
+@include responsive(lg) {
+  @include render-col('-lg');
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap : nowrap;
+  gap: 10px;
+}
+
+.row-wrap {
+  @extend .row;
+  flex-wrap: wrap;
+}
+
+.inline-row {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap : nowrap;
+  gap: 10px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap : nowrap;
+  gap: 10px;
+}
+
+.column-wrap {
+  @extend .column;
+  flex-wrap : nowrap;
+}
+
+[class*="col"] {
+  min-width: 0;
+}

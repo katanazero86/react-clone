@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.signin {
+  width: 800px;
+  height: 500px;
+
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+
+  .inputBox {
+    margin : 14px 0;
+  }
+
+  .inputBoxRight {
+    text-align: right;
+  }
+
+  .left {
+
+  }
+
+  .right {
+
+  }
+
+}

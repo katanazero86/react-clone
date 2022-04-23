@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+.inputCheckbox {
+
+  display: inline-flex;
+  align-items: center;
+  height: 40px;
+
+  input[type="checkbox"] {
+    height: 0;
+    width: 0;
+    display: none;
+    appearance: none;
+    outline: none;
+    border: none;
+  }
+
+  .check {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #828894;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    color: transparent;
+    margin-right: 12px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.15s ease-in-out;
+  }
+
+  .checkboxLabel {
+    color: #9e9e9e;
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"]:checked ~ .check {
+    border-color: #0a8fdc;
+    background-color: #0a8fdc;
+    color: #ffffff;
+  }
+
+}
