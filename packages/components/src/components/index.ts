@@ -10,3 +10,4 @@ export { default as InputPasswordComponent } from './Inputs/Password/InputPasswo
 export { default as InputCheckboxComponent } from './Inputs/Checkbox/InputCheckboxComponent';
 
 export { default as ButtonBasicComponent } from './Buttons/Basic/ButtonBasicComponent';
+export { default as ButtonIconComponent } from './Buttons/Icon/ButtonIconComponent';

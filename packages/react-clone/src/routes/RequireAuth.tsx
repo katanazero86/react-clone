@@ -12,5 +12,5 @@ export default function RequireAuth({ children }: RequireAuthProps) {
   if (!auth.user) {
     return <Navigate to="/signin" />;
   }
-  return <>children</>;
+  return <>{children}</>;
 }

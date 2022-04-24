@@ -43,8 +43,22 @@ export const Router = () => {
               </RequireAuth>
             }
           />
-          <Route path="signin" element={<Signin />} />
-          <Route path="signup" element={<Signup />} />
+          <Route
+            path="signin"
+            element={
+              <React.Suspense fallback={<div>loading</div>}>
+                <Signin />
+              </React.Suspense>
+            }
+          />
+          <Route
+            path="signup"
+            element={
+              <React.Suspense fallback={<div>loading</div>}>
+                <Signup />
+              </React.Suspense>
+            }
+          />
         </Route>
       </Routes>
     </AuthProvider>
