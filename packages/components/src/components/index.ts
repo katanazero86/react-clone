@@ -11,3 +11,5 @@ export { default as InputCheckboxComponent } from './Inputs/Checkbox/InputCheckb
 
 export { default as ButtonBasicComponent } from './Buttons/Basic/ButtonBasicComponent';
 export { default as ButtonIconComponent } from './Buttons/Icon/ButtonIconComponent';
+
+export { default as SpinnerDotComponent } from './Spinners/Dot/SpinnerDotComponent';
