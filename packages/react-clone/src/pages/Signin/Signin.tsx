@@ -1,5 +1,5 @@
-import { SigninComponent } from '@zero86/components';
 import './Signin.scss';
+import SigninComponent from '../../components/Signin/SigninComponent';
 
 export default function Signin() {
   return (

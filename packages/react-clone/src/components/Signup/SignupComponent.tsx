@@ -1,15 +1,20 @@
 import { useState } from 'react';
 import clsx from 'clsx';
-import classes from './SigninComponent.module.scss';
+import classes from './SignupComponent.module.scss';
 import { Link } from 'react-router-dom';
-import InputTextComponent from '../Inputs/Text/InputTextComponent';
-import InputPasswordComponent from '../Inputs/Password/InputPasswordComponent';
-import InputCheckboxComponent from '../Inputs/Checkbox/InputCheckboxComponent';
-import ButtonBasicComponent from '../Buttons/Basic/ButtonBasicComponent';
-import ButtonIconComponent from '../Buttons/Icon/ButtonIconComponent';
+import {
+  InputTextComponent,
+  InputPasswordComponent,
+  ButtonBasicComponent,
+  ButtonIconComponent,
+} from '@zero86/components';
 
-export default function SigninComponent() {
-  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+export default function SignupComponent() {
+  const [userName, setUserName] = useState<string>('');
+  const handleUserNameInput = (targetValue: string) => {
+    if (targetValue === '') setUserName('');
+    if (targetValue.length !== 0 && targetValue.trim() !== '') setUserName(targetValue.trim());
+  };
 
   const [userId, setUserId] = useState<string>('');
   const handleUserIdInput = (targetValue: string) => {
@@ -23,51 +28,29 @@ export default function SigninComponent() {
     if (targetValue.length !== 0 && targetValue.trim() !== '') setUserPassword(targetValue.trim());
   };
 
-  const [userRememberMe, setUserRememberMe] = useState<boolean>(false);
-  const handleRememberMeChange = (e: React.SyntheticEvent) => {
-    setUserRememberMe((e.target as HTMLInputElement).checked);
-  };
-
-  const handleLoginClick = () => {
-    const validation: { [key: string]: string } = {};
-    if (userId.trim() === '') validation['userId'] = 'Please Input User ID';
-    if (userPassword.trim() === '') validation['userPassword'] = 'Please Input User Password';
-
-    if (validation['userId'] || validation['userPassword']) {
-      setErrors(validation);
-      return false;
-    }
-  };
-
   return (
-    <div className={clsx(classes.signin)}>
+    <div className={clsx(classes.signup)}>
       <div className={clsx(classes.left)}>
         <div className={clsx(classes.signinForm)}>
-          <h2>React-clone Login</h2>
+          <h2>React-clone Signup</h2>
           <div className={clsx(classes.inputBox)}>
-            <InputTextComponent
-              value={userId}
-              handleInput={handleUserIdInput}
-              placeholder="User ID"
-              error={errors['userId']}
-            />
+            <InputTextComponent value={userName} handleInput={handleUserNameInput} placeholder="User Name" />
+          </div>
+          <div className={clsx(classes.inputBox)}>
+            <InputTextComponent value={userId} handleInput={handleUserIdInput} placeholder="User ID" />
           </div>
           <div className={clsx(classes.inputBox)}>
             <InputPasswordComponent
               value={userPassword}
               handleInput={handleUserPasswordInput}
               placeholder="User Password"
-              error={errors['userPassword']}
             />
           </div>
-          <div className={clsx(classes.inputBox, classes.inputBoxRight)}>
-            <InputCheckboxComponent label="Remember me" handleChange={handleRememberMeChange} />
-          </div>
-          <ButtonBasicComponent name="Login" fullWidth handleClick={handleLoginClick} />
+          <ButtonBasicComponent name="Signup" fullWidth />
           <div className={clsx(classes.signupInfo)}>
-            <span>Don{"'"}t have account?</span>
+            <span>Already have account?</span>
             <span>
-              <Link to="/signup">Signup</Link>
+              <Link to="/signin">Login</Link>
             </span>
           </div>
         </div>
@@ -113,10 +96,6 @@ export default function SigninComponent() {
             </ButtonIconComponent>
           </span>
         </div>
-      </div>
-      <div className={clsx(classes.right)}>
-        <h2>Welcome to React-clone!</h2>
-        <p>Dashboard 클론코딩입니다.(react + ts + scss)</p>
       </div>
     </div>
   );
