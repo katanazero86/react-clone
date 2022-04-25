@@ -1,8 +1,6 @@
-@import "./mixins/mixins";
+@import "mixins/mixins";
 
-@include responsive(xs) {
-  @include render-col('');
-}
+@include render-col('');
 
 @include responsive(sm) {
   @include render-col('-sm');

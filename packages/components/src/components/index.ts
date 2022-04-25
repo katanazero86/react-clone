@@ -1,5 +1,3 @@
-import '../scss/common.scss';
-
 export { default as Example } from './Example';
 
 export { default as InputTextComponent } from './Inputs/Text/InputTextComponent';
