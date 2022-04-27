@@ -19,4 +19,17 @@ export default {
       }, 3000);
     });
   },
+  async createUser({ userId, userPassword, userName }: { userId: string; userPassword: string; userName: string }) {
+    return await new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({
+          me: {
+            userId,
+            userName,
+          },
+          token: 'token value2',
+        });
+      }, 2000);
+    });
+  },
 };
