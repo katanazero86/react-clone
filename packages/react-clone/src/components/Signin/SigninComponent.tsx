@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
+import { auth } from '../../store/atoms/auth';
 import clsx from 'clsx';
 import classes from './SigninComponent.module.scss';
-import { Link } from 'react-router-dom';
 import {
   InputTextComponent,
   InputPasswordComponent,
@@ -9,8 +11,16 @@ import {
   ButtonBasicComponent,
   ButtonIconComponent,
 } from '@zero86/components';
+import { useLoginQuery } from '../../queries/useAuthQuery';
 
 export default function SigninComponent() {
+  const [authAtom, setAuthAtom] = useRecoilState(auth);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (authAtom.me && authAtom.token) navigate('/', { replace: true });
+  }, [authAtom]);
+
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
   const [userId, setUserId] = useState<string>('');
@@ -39,7 +49,21 @@ export default function SigninComponent() {
       setErrors(validation);
       return false;
     }
+
+    refetch();
   };
+
+  const { data, isFetching, refetch, isError } = useLoginQuery({ userId, userPassword });
+
+  useEffect(() => {
+    if (data && data.me && data.token) {
+      localStorage.setItem('user', JSON.stringify(data));
+      setAuthAtom(data);
+      navigate('/', { replace: true });
+    }
+  }, [data]);
+
+  if (isFetching) return <div>loading..</div>;
 
   return (
     <div className={clsx(classes.signin)}>

@@ -1,16 +1,14 @@
 import * as React from 'react';
 import { Navigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
+import { useRecoilValue } from 'recoil';
+import { auth } from '../store/atoms/auth';
 
 interface RequireAuthProps {
   children: React.ReactNode;
 }
 
 export default function RequireAuth({ children }: RequireAuthProps) {
-  const auth = useAuth();
-
-  if (!auth.user) {
-    return <Navigate to="/signin" />;
-  }
+  const authAtom = useRecoilValue(auth);
+  if (authAtom.me === undefined && authAtom.token === undefined) return <Navigate to="/signin" />;
   return <>{children}</>;
 }

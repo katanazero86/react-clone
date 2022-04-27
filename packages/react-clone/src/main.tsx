@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import { RecoilRoot } from 'recoil';
 import App from './App';
 import './index.css';
 
@@ -12,7 +13,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
-        <App />
+        <RecoilRoot>
+          <App />
+        </RecoilRoot>
         <ReactQueryDevtools />
       </QueryClientProvider>
     </BrowserRouter>
