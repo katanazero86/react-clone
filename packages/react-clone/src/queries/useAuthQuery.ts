@@ -1,4 +1,4 @@
-import { useQuery, useMutation } from 'react-query';
+import { useQuery } from 'react-query';
 import apiAuth from '../apis/auth/api.auth';
 
 interface useLoginQueryData {
@@ -12,7 +12,7 @@ const requestLogin = async ({ userId, userPassword }: useLoginQueryData) => {
 };
 
 export const useLoginQuery = (data: useLoginQueryData) => {
-  return useQuery<any>('login', () => requestLogin(data), {
+  return useQuery<any>(['login', data], () => requestLogin(data), {
     enabled: false,
   });
 };
@@ -26,21 +26,7 @@ const requestLogout = async ({ userId }: useLogoutQueryData) => {
 };
 
 export const useLogoutQuery = (data: useLogoutQueryData) => {
-  return useQuery('logout', () => requestLogout(data), {
+  return useQuery(['logout', data], () => requestLogout(data), {
     enabled: false,
   });
 };
-
-interface useCreateUserMutationData {
-  userId: string;
-  userPassword: string;
-  userName: string;
-}
-
-const createUser = async ({userId, userPassword, userName}:useCreateUserMutationData) => {
-  const result = await apiAuth.createUser({userId, userPassword, userName});
-};
-
-export const useCreateUserMutation = async ({userId, userPassword, userName} : useCreateUserMutationData) {
-  return useMutation('createUser');
-}

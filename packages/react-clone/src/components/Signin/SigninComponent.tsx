@@ -53,17 +53,16 @@ export default function SigninComponent() {
     refetch();
   };
 
-  const { data, isFetching, refetch, isError } = useLoginQuery({ userId, userPassword });
+  const { data, isLoading, refetch } = useLoginQuery({ userId, userPassword });
 
   useEffect(() => {
     if (data && data.me && data.token) {
       localStorage.setItem('user', JSON.stringify(data));
       setAuthAtom(data);
-      navigate('/', { replace: true });
     }
   }, [data]);
 
-  if (isFetching) return <div>loading..</div>;
+  if (isLoading) return <div>loading..</div>;
 
   return (
     <div className={clsx(classes.signin)}>
