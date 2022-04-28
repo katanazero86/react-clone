@@ -2,8 +2,8 @@ import { atom } from 'recoil';
 
 interface User {
   me: {
-    name: string;
-    id: string;
+    userName: string;
+    userId: string;
   };
   token: string;
 }

@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
 import { auth } from '../../store/atoms/auth';
-import clsx from 'clsx';
 import classes from './SignupComponent.module.scss';
+import clsx from 'clsx';
 import {
   InputTextComponent,
   InputPasswordComponent,

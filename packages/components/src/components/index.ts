@@ -8,3 +8,6 @@ export { default as ButtonBasicComponent } from './Buttons/Basic/ButtonBasicComp
 export { default as ButtonIconComponent } from './Buttons/Icon/ButtonIconComponent';
 
 export { default as SpinnerDotComponent } from './Spinners/Dot/SpinnerDotComponent';
+
+export { default as AppBarComponent } from './AppBar/AppBarComponent';
+export { default as UserInfoComponent } from './UserInfo/UserInfoComponent';
