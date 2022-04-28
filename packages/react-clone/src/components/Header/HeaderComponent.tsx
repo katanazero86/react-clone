@@ -19,8 +19,9 @@ const Menu = () => {
         </ButtonIconComponent>
       </div>
       {open && (
-        <ul className={clsx(classes.menuList)}>
-          <li>Profile</li>
+        <ul className={clsx(classes.menuList)} role="navigation">
+          <li>My Profile</li>
+          <li>Logout</li>
         </ul>
       )}
     </>
