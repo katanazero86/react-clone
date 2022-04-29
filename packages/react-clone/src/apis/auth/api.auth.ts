@@ -5,7 +5,7 @@ export default {
         resolve({
           me: {
             userId,
-            userName: 'test',
+            userName: '홍길동',
           },
           token: 'token value',
         });

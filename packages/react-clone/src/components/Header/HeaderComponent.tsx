@@ -1,4 +1,5 @@
-import { useRecoilValue } from 'recoil';
+import { useNavigate } from 'react-router-dom';
+import { useRecoilState } from 'recoil';
 import { auth } from '../../store/atoms/auth';
 import classes from './Header.module.scss';
 import clsx from 'clsx';
@@ -16,9 +17,21 @@ import {
 import imgUrl from '../../assets/imgs/img-user-example.png';
 
 export default function HeaderComponent() {
-  const authAtom = useRecoilValue(auth);
-
+  const navigate = useNavigate();
+  const [authAtom, setAuthAtom] = useRecoilState(auth);
   const [open, setOpen, dropdownRef] = useDetectOutsideClick();
+
+  const logout = () => {
+    localStorage.removeItem('user');
+    setAuthAtom({
+      me: {
+        userName: '',
+        userId: '',
+      },
+      token: '',
+    });
+    navigate('/signin');
+  };
 
   return (
     <AppBarComponent>
@@ -35,7 +48,7 @@ export default function HeaderComponent() {
         </ButtonIconComponent>
         <DropdownItemsComponent open={open} align="right">
           <DropdownItemComponent>My Profile</DropdownItemComponent>
-          <DropdownItemComponent>Logout</DropdownItemComponent>
+          <DropdownItemComponent handleClick={logout}>Logout</DropdownItemComponent>
         </DropdownItemsComponent>
       </DropdownComponent>
     </AppBarComponent>
