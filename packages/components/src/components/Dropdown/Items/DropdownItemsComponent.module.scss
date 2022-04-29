@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+.dropdownItems {
+  position: absolute;
+  background-color: #fff;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: 0.25rem;
+  min-width: 130px;
+
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.2s ease;
+
+  ul, li {
+    list-style: none;
+  }
+
+  ul {
+    padding: 6px 0;
+  }
+
+  li {
+    padding: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-weight: 400;
+    font-size: 14px;
+    &:hover {
+      background-color: #e9ecef;
+    }
+  }
+
+}
+
+.open {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.close {
+  pointer-events: none;
+}
