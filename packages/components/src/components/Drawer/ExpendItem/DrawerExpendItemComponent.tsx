@@ -23,7 +23,7 @@ export default function DrawerExpendItemComponent({
   return (
     <>
       <li onClick={onClick} data-name={label}>
-        more {isExpend ? <ChevronDown /> : <ChevronRight />}
+        {label} {isExpend ? <ChevronDown /> : <ChevronRight />}
       </li>
       {isExpend && (
         <ul>
