@@ -12,6 +12,7 @@ import {
   GoogleIconComponent,
   FacebookIconComponent,
   AppleIconComponent,
+  SpinnerCircleComponent,
 } from '@zero86/components';
 import { useCreateUserMutation } from '../../mutations/useAuthMutaion';
 
@@ -59,7 +60,7 @@ export default function SignupComponent() {
     navigate('/', { replace: true });
   };
 
-  if (isLoading) return <div>loading..</div>;
+  if (isLoading) return <SpinnerCircleComponent />;
 
   return (
     <div className={clsx(classes.signup)}>

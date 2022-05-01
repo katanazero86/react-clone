@@ -13,6 +13,7 @@ import {
   GoogleIconComponent,
   FacebookIconComponent,
   AppleIconComponent,
+  SpinnerCircleComponent,
 } from '@zero86/components';
 import { useLoginQuery } from '../../queries/useAuthQuery';
 
@@ -65,7 +66,7 @@ export default function SigninComponent() {
     }
   }, [data]);
 
-  if (isLoading) return <div>loading..</div>;
+  if (isLoading) return <SpinnerCircleComponent />;
 
   return (
     <div className={clsx(classes.signin)}>
