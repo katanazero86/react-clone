@@ -27,5 +27,10 @@ export { default as DropdownItemComponent } from './Dropdown/Item/DropdownItemCo
 
 export { default as DrawerComponent } from './Drawer/DrawerComponent';
 
+export { default as TypographyComponent } from './Typography/TypographyComponent';
+
+export { default as CardComponent } from './Card/CardComponent';
+export { default as CardContentComponent } from './Card/Content/CardContentComponent';
+
 // custom hooks
 export { default as useDetectOutsideClick } from '../hooks/useDetectOutsideClick';

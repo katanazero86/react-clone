@@ -1,24 +1,26 @@
 @import "mixins/mixins";
 
-@include render-col('');
+$gap : 10px;
+
+@include render-col('', $gap);
 
 @include responsive(sm) {
-  @include render-col('-sm');
+  @include render-col('-sm', $gap);
 }
 
 @include responsive(md) {
-  @include render-col('-md');
+  @include render-col('-md', $gap);
 }
 
 @include responsive(lg) {
-  @include render-col('-lg');
+  @include render-col('-lg', $gap);
 }
 
 .row {
   display: flex;
   flex-direction: row;
-  flex-wrap : nowrap;
-  gap: 10px;
+  flex-wrap: nowrap;
+  gap: $gap
 }
 
 .row-wrap {
@@ -29,20 +31,20 @@
 .inline-row {
   display: inline-flex;
   flex-direction: row;
-  flex-wrap : nowrap;
+  flex-wrap: nowrap;
   gap: 10px;
 }
 
 .column {
   display: flex;
   flex-direction: column;
-  flex-wrap : nowrap;
-  gap: 10px;
+  flex-wrap: nowrap;
+  gap: $gap;
 }
 
 .column-wrap {
   @extend .column;
-  flex-wrap : nowrap;
+  flex-wrap: nowrap;
 }
 
 [class*="col"] {
@@ -54,4 +56,40 @@ a {
   color: #0a8fdc;
   cursor: pointer;
   font-weight: 500;
+}
+
+.align-items {
+  &-start {
+    align-items: start;
+  }
+  &-center {
+    align-items: center;
+  }
+  &-end {
+    align-items: end;
+  }
+  &-staetch {
+    align-items: stretch;
+  }
+}
+
+.justify-content {
+  &-start {
+    justify-content: flex-start;
+  }
+  &-center {
+    justify-content: center;
+  }
+  &-end {
+    justify-content: flex-end;
+  }
+  &-between {
+    justify-content: space-between;
+  }
+  &-around {
+    justify-content: space-around;
+  }
+  &-evenly {
+    justify-content: space-evenly;
+  }
 }

@@ -1,30 +1,43 @@
 @import "../functions/functions";
 
-@mixin render-col($type) {
+@mixin render-col($type, $gap) {
+  .col#{$type} {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
   @for $i from 1 to 13 {
     .col#{$type}-#{$i} {
-      flex-grow : 0;
-      flex-shrink : 0;
-      flex-basis : get-size($i);
-      max-width: get-size($i);
+      flex-grow: 0;
+      flex-basis: calc(get-size($i) - $gap);
+      max-width: calc(get-size($i) - $gap);
     }
   }
 }
 
-$xs : 0px;
-$sm : 576px;
-$md : 768px;
-$lg : 1024px;
+$xs: 0px;
+$sm: 576px;
+$md: 768px;
+$lg: 1024px;
 
 @mixin responsive($range) {
   @if $range == xs {
-    @media (min-width: $xs) { @content; }
+    @media (min-width: $xs) {
+      @content;
+    }
   } @else if $range == sm {
-    @media (min-width: $sm) { @content; }
+    @media (min-width: $sm) {
+      @content;
+    }
   } @else if $range == md {
-    @media (min-width: $md) { @content; }
+    @media (min-width: $md) {
+      @content;
+    }
   } @else if $range == lg {
-    @media (min-width: $lg) { @content; }
+    @media (min-width: $lg) {
+      @content;
+    }
   }
 }
 
