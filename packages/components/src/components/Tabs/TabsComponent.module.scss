@@ -1,0 +1,23 @@
+
+.tabs {
+
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+
+  > button {
+    color: #6b7280;
+    outline: none;
+    padding: 16px;
+    font-weight: 500;
+    min-width: 80px;
+    max-width: 300px;
+    min-height: 48px;
+    text-align: center;
+    font-size: 14px;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+  }
+
+}

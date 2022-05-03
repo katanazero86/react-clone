@@ -32,5 +32,8 @@ export { default as TypographyComponent } from './Typography/TypographyComponent
 export { default as CardComponent } from './Card/CardComponent';
 export { default as CardContentComponent } from './Card/Content/CardContentComponent';
 
+export { default as TabsComponent } from './Tabs/TabsComponent';
+export { default as TabComponent } from './Tabs/Tab/TabComponent';
+
 // custom hooks
 export { default as useDetectOutsideClick } from '../hooks/useDetectOutsideClick';
