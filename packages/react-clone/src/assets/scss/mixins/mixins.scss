@@ -10,8 +10,8 @@
   @for $i from 1 to 13 {
     .col#{$type}-#{$i} {
       flex-grow: 0;
-      flex-basis: calc(get-size($i) - $gap);
-      max-width: calc(get-size($i) - $gap);
+      flex-basis: calc(get-size($i) - ($gap / 2));
+      max-width: calc(get-size($i) - ($gap) / 2);
     }
   }
 }
