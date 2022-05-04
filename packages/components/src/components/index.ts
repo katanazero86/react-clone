@@ -20,6 +20,7 @@ export { default as MoreVerticalIconComponent } from './Icons/MoreVertical/MoreV
 export { default as MenuIconComponent } from './Icons/Menu/MenuIconComponent';
 export { default as ChevronDown } from './Icons/ChevronDown/ChevronDown';
 export { default as ChevronRight } from './Icons/ChevronRight/ChevronRight';
+export { default as ChevronUp } from './Icons/ChevronUp/ChevronUp';
 
 export { default as DropdownComponent } from './Dropdown/DropdownComponent';
 export { default as DropdownItemsComponent } from './Dropdown/Items/DropdownItemsComponent';
@@ -34,6 +35,8 @@ export { default as CardContentComponent } from './Card/Content/CardContentCompo
 
 export { default as TabsComponent } from './Tabs/TabsComponent';
 export { default as TabComponent } from './Tabs/Tab/TabComponent';
+
+export { default as SelectComponent } from './Select/SelectComponent';
 
 // custom hooks
 export { default as useDetectOutsideClick } from '../hooks/useDetectOutsideClick';

@@ -9,6 +9,7 @@ import {
   TabComponent,
   TabsComponent,
   TypographyComponent,
+  SelectComponent,
 } from '@zero86/components';
 
 export default function Home() {
@@ -55,6 +56,9 @@ export default function Home() {
             <TabComponent value={1} name={'1 tab'} />
             <TabComponent value={2} name={'2 tab'} />
           </TabsComponent>
+        </div>
+        <div className="col-1">
+          <SelectComponent />
         </div>
       </div>
     </div>
