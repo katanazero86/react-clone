@@ -1,26 +1,11 @@
 import * as React from 'react';
-import { useState } from 'react';
 import './Home.scss';
 import TotalBalanceComponent from '../../components/Dashboard/TotalBalance/TotalBalanceComponent';
 import CoinInfoComponent from '../../components/Dashboard/CoinInfo/CoinInfoComponent';
-import {
-  CardComponent,
-  CardContentComponent,
-  TabComponent,
-  TabsComponent,
-  TypographyComponent,
-  SelectComponent,
-} from '@zero86/components';
+import CoinGraphComponent from '../../components/Dashboard/CoinGraph/CoinGraphComponent';
+import { CardComponent, CardContentComponent, TypographyComponent } from '@zero86/components';
 
 export default function Home() {
-  const [tabValue, setTabValue] = useState<number | string>(1);
-  const handleTabClick = (e: React.SyntheticEvent, newValue: number | string) => {
-    console.log(e, newValue);
-    if (tabValue !== newValue) {
-      setTabValue(newValue);
-    }
-  };
-
   return (
     <div className="home">
       <TypographyComponent variant={'h2'}>Dashboard</TypographyComponent>
@@ -52,13 +37,7 @@ export default function Home() {
           })}
         </div>
         <div className="col-12">
-          <TabsComponent value={tabValue} handleClick={handleTabClick}>
-            <TabComponent value={1} name={'1 tab'} />
-            <TabComponent value={2} name={'2 tab'} />
-          </TabsComponent>
-        </div>
-        <div className="col-1">
-          <SelectComponent />
+          <CoinGraphComponent />
         </div>
       </div>
     </div>

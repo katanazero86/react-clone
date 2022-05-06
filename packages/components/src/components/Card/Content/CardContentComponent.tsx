@@ -3,7 +3,7 @@ import classes from './CardContentComponent.module.scss';
 import clsx from 'clsx';
 
 interface CardContentComponentProps {
-  children: React.ReactElement;
+  children: React.ReactElement | React.ReactElement[];
 }
 
 export default function CardContentComponent({ children }: CardContentComponentProps) {

@@ -37,6 +37,7 @@ export { default as TabsComponent } from './Tabs/TabsComponent';
 export { default as TabComponent } from './Tabs/Tab/TabComponent';
 
 export { default as SelectComponent } from './Select/SelectComponent';
+export { default as SelectItemComponent } from './Select/Item/SelectItemComponent';
 
 // custom hooks
 export { default as useDetectOutsideClick } from '../hooks/useDetectOutsideClick';

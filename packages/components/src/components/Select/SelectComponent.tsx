@@ -1,15 +1,17 @@
 import * as React from 'react';
+import { useEffect, useRef, useState } from 'react';
 import classes from './SelectComponent.module.scss';
 import clsx from 'clsx';
 import ChevronDown from '../Icons/ChevronDown/ChevronDown';
-import { useEffect, useRef, useState } from 'react';
+import ChevronUp from '../Icons/ChevronUp/ChevronUp';
 
 interface SelectComponentProps {
-  children?: React.ReactElement;
+  children?: React.ReactElement | React.ReactElement[];
   value?: string | number;
+  onChange?(value: string | number): void;
 }
 
-export default function SelectComponent({ children, value }: SelectComponentProps) {
+export default function SelectComponent({ children, value, onChange }: SelectComponentProps) {
   const selectRef = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
 
@@ -35,15 +37,23 @@ export default function SelectComponent({ children, value }: SelectComponentProp
     setOpen(!open);
   };
 
+  const onItemClick = (e: React.SyntheticEvent) => {
+    e.stopPropagation();
+    const targetEl = e.target as HTMLElement;
+    const value = targetEl.dataset.value;
+    if (value !== undefined) {
+      if (onChange) onChange(value);
+      setOpen(false);
+    }
+  };
+
   return (
     <div className={clsx(classes.select)} ref={selectRef}>
       <div className={clsx(classes.box)} onClick={onClick}>
-        <p>Litecoin</p> <ChevronDown />
+        <p>{value}</p> {open ? <ChevronUp /> : <ChevronDown />}
       </div>
-      <ul className={clsx(open && classes.expand, classes.items)}>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
+      <ul className={clsx(open && classes.expand, classes.items)} onClick={onItemClick}>
+        {children}
       </ul>
     </div>
   );
