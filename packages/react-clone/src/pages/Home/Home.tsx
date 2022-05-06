@@ -4,6 +4,7 @@ import TotalBalanceComponent from '../../components/Dashboard/TotalBalance/Total
 import CoinInfoComponent from '../../components/Dashboard/CoinInfo/CoinInfoComponent';
 import CoinGraphComponent from '../../components/Dashboard/CoinGraph/CoinGraphComponent';
 import { CardComponent, CardContentComponent, TypographyComponent } from '@zero86/components';
+import PopularCoinsComponent from '../../components/Dashboard/PopularCoins/PopularCoinsComponent';
 
 export default function Home() {
   return (
@@ -38,6 +39,13 @@ export default function Home() {
         </div>
         <div className="col-12">
           <CoinGraphComponent />
+        </div>
+        <div className="col-12 col-md-6">
+          <CardComponent>
+            <CardContentComponent>
+              <PopularCoinsComponent />
+            </CardContentComponent>
+          </CardComponent>
         </div>
       </div>
     </div>

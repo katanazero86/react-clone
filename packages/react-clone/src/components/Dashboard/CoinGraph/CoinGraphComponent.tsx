@@ -85,8 +85,8 @@ export default function CoinGraphComponent() {
   return (
     <CardComponent>
       <CardContentComponent>
-        <div className="row align-items-center justify-content-between">
-          <div className="col-2">
+        <div className="row-wrap align-items-center justify-content-between">
+          <div className="col-12 col-sm-2">
             <SelectComponent value={selectValue} onChange={handleSelectChange}>
               <SelectItemComponent value="Litecoin" selectedValue={selectValue}>
                 Litecoin
@@ -99,7 +99,7 @@ export default function CoinGraphComponent() {
               </SelectItemComponent>
             </SelectComponent>
           </div>
-          <div className="col-3 row justify-content-end">
+          <div className="col-12 col-sm-3 row justify-content-end">
             <TabsComponent value={tabValue} handleClick={handleTabClick}>
               <TabComponent name="Yearly" value={0} />
               <TabComponent name="Monthly" value={1} />
@@ -108,26 +108,37 @@ export default function CoinGraphComponent() {
             </TabsComponent>
           </div>
         </div>
-        <ResponsiveContainer width="100%" height={360}>
-          <AreaChart data={getData(tabValue)} margin={{ top: 50, right: 0, left: 0, bottom: 0 }}>
-            <XAxis
-              dataKey={onGetDataKey(tabValue)}
-              tickLine={false}
-              axisLine={false}
-              padding={{ left: 20, right: 20 }}
-            />
-            <Tooltip labelStyle={{ color: 'black' }} />
-            <YAxis tickLine={false} axisLine={false} ticks={[2000, 4000, 6000, 8000, 10000]} type="number" />
-            <CartesianGrid strokeDasharray="2 10" stroke="#E53E3E" vertical={false} />
-            <defs>
-              <linearGradient id="color15" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor="#FED7E2" stopOpacity={0.8} />
-                <stop offset="95%" stopColor="#FFF5F7" stopOpacity={0.8} />
-              </linearGradient>
-            </defs>
-            <Area dataKey="amount" strokeWidth={4} stackId="2" stroke="#E53E3E" fill="url(#color15)" fillOpacity={1} />
-          </AreaChart>
-        </ResponsiveContainer>
+        <div className="row">
+          <div style={{ width: '100%', height: '360px' }}>
+            <ResponsiveContainer>
+              <AreaChart data={getData(tabValue)} margin={{ top: 50, right: 0, left: 0, bottom: 0 }}>
+                <XAxis
+                  dataKey={onGetDataKey(tabValue)}
+                  tickLine={false}
+                  axisLine={false}
+                  padding={{ left: 20, right: 20 }}
+                />
+                <Tooltip labelStyle={{ color: 'black' }} />
+                <YAxis tickLine={false} axisLine={false} ticks={[2000, 4000, 6000, 8000, 10000]} type="number" />
+                <CartesianGrid strokeDasharray="2 10" stroke="#E53E3E" vertical={false} />
+                <defs>
+                  <linearGradient id="color15" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="5%" stopColor="#FED7E2" stopOpacity={0.8} />
+                    <stop offset="95%" stopColor="#FFF5F7" stopOpacity={0.8} />
+                  </linearGradient>
+                </defs>
+                <Area
+                  dataKey="amount"
+                  strokeWidth={4}
+                  stackId="2"
+                  stroke="#E53E3E"
+                  fill="url(#color15)"
+                  fillOpacity={1}
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
       </CardContentComponent>
     </CardComponent>
   );
