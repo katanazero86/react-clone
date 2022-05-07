@@ -17,35 +17,45 @@ export default function PopularCoinsComponent() {
   const [popularCoins, setPopularCoins] = useState<PopularCoinsData[]>([]);
   useEffect(() => {
     setPopularCoins(targetData);
+    console.log(targetData);
   }, []);
 
   return (
     <div className={clsx(classes.popularCoins)}>
       <h3>Popular Coins</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>No.</th>
-            <th>Name</th>
-            <th>Market Cap</th>
-            <th>Volume 24h</th>
-            <th>24h %</th>
-          </tr>
-        </thead>
-        <tbody>
-          {popularCoins.map(pc => {
-            return (
-              <tr key={pc.id}>
-                <td>{pc.id}</td>
-                <td>{pc.name}</td>
-                <td>{pc.marketCap}</td>
-                <td>{pc.volume}</td>
-                <td>{pc.h}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <div className={clsx(classes.coinTable)}>
+        <table>
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Name</th>
+              <th>Market Cap</th>
+              <th>Volume 24h</th>
+              <th>24h %</th>
+            </tr>
+          </thead>
+          <tbody>
+            {popularCoins.map(pc => {
+              return (
+                <tr key={pc.id}>
+                  <td>{pc.id}</td>
+                  <td className={clsx(classes.nameCol)}>
+                    <div>
+                      <figure style={{ backgroundColor: `${pc.color}` }}>
+                        <img src={pc.image} alt="coin-logo" />
+                      </figure>
+                      {pc.name}
+                    </div>
+                  </td>
+                  <td>{pc.marketCap}</td>
+                  <td>{pc.volume}</td>
+                  <td>{pc.h}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
@@ -58,7 +68,7 @@ const targetData = [
     marketCap: '129,820,932',
     volume: '25,111,773',
     h: '2.50',
-    image: '/assets/images/bitcoin.svg',
+    image: new URL('../../../assets/imgs/img-bitcoin-logo.svg', import.meta.url).href,
     color: '#fb8c00',
   },
   {
@@ -68,7 +78,7 @@ const targetData = [
     marketCap: '24,909,820',
     volume: '12,344,434',
     h: '0.45',
-    image: '/assets/images/etherium.svg',
+    image: new URL('../../../assets/imgs/img-etherium-logo.svg', import.meta.url).href,
     color: 'black',
   },
   {
@@ -78,7 +88,7 @@ const targetData = [
     marketCap: '137,334,223',
     volume: '43,434,213',
     h: '3.43',
-    image: '/assets/images/litcoin.svg',
+    image: new URL('../../../assets/imgs/img-litecoin-logo.svg', import.meta.url).href,
     color: '#42a5f5',
   },
   {
@@ -88,7 +98,7 @@ const targetData = [
     marketCap: '21,445,237',
     volume: '32,324,655',
     h: '0.93',
-    image: '/assets/images/bitcoin.svg',
+    image: new URL('../../../assets/imgs/img-bitcoin-logo.svg', import.meta.url).href,
     color: '#ff9800',
   },
   {
@@ -98,7 +108,7 @@ const targetData = [
     marketCap: '124,674,765',
     volume: '94,342,323',
     h: '0.30',
-    image: '/assets/images/bitcoin.svg',
+    image: new URL('../../../assets/imgs/img-bitcoin-logo.svg', import.meta.url).href,
     color: '#1e88e5',
   },
 ];

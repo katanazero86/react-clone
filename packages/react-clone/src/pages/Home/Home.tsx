@@ -42,7 +42,7 @@ export default function Home() {
         </div>
         <div className="col-12 col-md-6">
           <CardComponent>
-            <CardContentComponent>
+            <CardContentComponent noPadding>
               <PopularCoinsComponent />
             </CardContentComponent>
           </CardComponent>
