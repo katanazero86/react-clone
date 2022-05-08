@@ -5,6 +5,7 @@ import CoinInfoComponent from '../../components/Dashboard/CoinInfo/CoinInfoCompo
 import CoinGraphComponent from '../../components/Dashboard/CoinGraph/CoinGraphComponent';
 import { CardComponent, CardContentComponent, TypographyComponent } from '@zero86/components';
 import PopularCoinsComponent from '../../components/Dashboard/PopularCoins/PopularCoinsComponent';
+import LatestNewsComponent from '../../components/Dashboard/LatestNews/LatestNewsComponent';
 
 export default function Home() {
   return (
@@ -44,6 +45,13 @@ export default function Home() {
           <CardComponent>
             <CardContentComponent noPadding>
               <PopularCoinsComponent />
+            </CardContentComponent>
+          </CardComponent>
+        </div>
+        <div className="col-12 col-md-6">
+          <CardComponent hFull>
+            <CardContentComponent>
+              <LatestNewsComponent />
             </CardContentComponent>
           </CardComponent>
         </div>

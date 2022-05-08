@@ -1,5 +1,50 @@
 @charset "UTF-8";
 
 .latestNews {
+  min-height: 400px;
+  > h3 {
+    color: #111827;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .newsRow {
+    padding: 8px 0;
+    .header {
+      display: flex;
+      align-items: center;
+      .created {
+        color: #6b7280;
+        font-size: 14px;
+      }
+
+      .by {
+        margin-left: 10px;
+        font-size: 14px;
+        color: #0a8fdc;
+      }
+    }
+
+    .body {
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .news {
+        color: #6b7280;
+        font-weight: 500;
+        font-size: 14px;
+      }
+
+      > img {
+        margin-left: 20px;
+        width: 160px;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+  }
 
 }
