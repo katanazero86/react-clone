@@ -36,8 +36,10 @@
       cursor: pointer;
       font-size: 14px;
 
-      &:hover {
-        background-color: rgba(0, 0, 0, 0.04);
+      @media (hover: hover) {
+        &:hover {
+          background-color: rgba(0, 0, 0, 0.04);
+        }
       }
 
     }

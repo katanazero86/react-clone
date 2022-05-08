@@ -15,8 +15,10 @@
 
   transition: background-color 0.1s ease-in;
 
-  &:hover {
-    background-color: #07649a;
+  @media (hover: hover) {
+    &:hover {
+      background-color: #07649a;
+    }
   }
 
 }
