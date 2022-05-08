@@ -26,8 +26,10 @@
     transition: background-color 0.2s ease;
     font-weight: 400;
     font-size: 14px;
-    &:hover {
-      background-color: #e9ecef;
+    @media (hover: hover) {
+      &:hover {
+        background-color: #e9ecef;
+      }
     }
   }
 
