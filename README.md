@@ -69,6 +69,7 @@ Peer dependencies(피어 종속성) 에서도 npm v7 은 피어 종속성을 자
 - npm workspace 로 프로젝트가 구성되어있습니다.(npm 7 버전 이상)
 - /packages/components 패키지는 워크스페이스내 패키지들이 공유한 컴포넌트를 관리하는 패키지입니다.
 - scss 를 사용했으며, css module 방식으로 작성이 되어있으며 TypeScript 기반으로 컴포넌트와 코드들이 작성되어 있습니다.
+- eslint 와 prettier 는 root package.json 에 의존성이 있으며 프로젝트 root 에서 관리가 됩니다.
 
 ---
 
