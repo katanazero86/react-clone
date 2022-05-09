@@ -22,9 +22,9 @@ export default function About() {
           React.js, SCSS, Recoil, React Router, React-query 가 적용되어 있습니다.
           <br />
           Vite 를 이용하여, 프로젝트를 생성하였습니다. (Rollup.js 기반) <br />
-          이번 프로젝트를 진행하면서 사용해보지 않았던 npm workspace 를 통한 monorepo 환경구축과 <br />
-          React-query 를 사용해보았습니다. 확실히 비동기 관련 코드가 줄었고, 풍부한 옵션과 기능제공으로 개발자에게 좋은
-          개발경험을 제공하는 것을 경험했습니다.
+          이번 프로젝트를 진행하면서 사용해보지 않았던 npm workspace 를 통한 monorepo 환경구축과 React-query 를
+          사용해보았습니다. 확실히 비동기 관련 코드가 줄었고, 풍부한 옵션과 기능제공으로 개발자에게 좋은 개발경험을
+          제공하는 것을 경험했습니다.
           <br />
           한편으로는 풍부한 옵션과 기능제공으로 인해 러닝커브가 어느정도 발생을 하겠구나라는 생각도
           들었습니다.(redux-saga 와 비교한다면 부드러울거 같습니다)
