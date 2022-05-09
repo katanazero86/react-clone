@@ -54,7 +54,6 @@ export default function SignupComponent() {
     }
 
     const result = await mutateAsync({ userName, userId, userPassword });
-    console.log(result);
     localStorage.setItem('user', JSON.stringify(result));
     setAuthAtom(result);
     navigate('/', { replace: true });

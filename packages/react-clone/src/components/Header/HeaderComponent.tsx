@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useRecoilState } from 'recoil';
 import { auth } from '../../store/atoms/auth';
@@ -16,7 +17,6 @@ import {
   DrawerComponent,
 } from '@zero86/components';
 import imgUrl from '../../assets/imgs/img-user-example.png';
-import { useState } from 'react';
 
 export default function HeaderComponent() {
   const navigate = useNavigate();
@@ -64,7 +64,15 @@ export default function HeaderComponent() {
 }
 
 const drawerItems = [
-  { label: 'Dashboard', isExpend: false },
-  { label: 'About', isExpend: false },
-  { label: 'Test', isExpend: true, expendItems: [{ label: 'Child1' }, { label: 'Child2' }] },
+  { label: 'Dashboard', isExpend: false, path: '/' },
+  { label: 'About', isExpend: false, path: '/about' },
+  {
+    label: 'Test',
+    isExpend: true,
+    expendItems: [
+      { label: 'Child1', path: '' },
+      { label: 'Child2', path: '' },
+    ],
+    path: '',
+  },
 ];

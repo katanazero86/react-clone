@@ -1,7 +1,6 @@
-import * as React from 'react';
+import { useRef, useState } from 'react';
 import classes from './DrawerComponent.module.scss';
 import clsx from 'clsx';
-import { useRef, useState } from 'react';
 import DrawerItemComponent from './Item/DrawerItemComponent';
 import DrawerExpendItemComponent from './ExpendItem/DrawerExpendItemComponent';
 
@@ -12,7 +11,8 @@ interface IExpend {
 interface IItem {
   label?: string;
   isExpend?: boolean;
-  expendItems?: { label?: string }[];
+  path?: string;
+  expendItems?: { label?: string; path?: string }[];
 }
 
 interface DrawerComponentProps {
@@ -44,6 +44,12 @@ export default function DrawerComponent({ open, close, items = [] }: DrawerCompo
     }
   };
 
+  // const handleItemClick = (e: React.SyntheticEvent) => {
+  //   console.log(e.target);
+  // };
+
+  console.log('test..asdasd');
+
   return (
     <div className={clsx(classes.drawer, open ? classes.drawerOpen : '')} onClick={onClick} ref={drawerRef}>
       <div className={clsx(classes.side)}>
@@ -62,7 +68,7 @@ export default function DrawerComponent({ open, close, items = [] }: DrawerCompo
               );
             }
 
-            return <DrawerItemComponent key={item.label}>{item.label}</DrawerItemComponent>;
+            return <DrawerItemComponent key={item.label} label={item.label} path={item.path} />;
           })}
         </ul>
       </div>

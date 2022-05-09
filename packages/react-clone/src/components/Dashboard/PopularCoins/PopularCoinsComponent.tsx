@@ -17,7 +17,6 @@ export default function PopularCoinsComponent() {
   const [popularCoins, setPopularCoins] = useState<PopularCoinsData[]>([]);
   useEffect(() => {
     setPopularCoins(targetData);
-    console.log(targetData);
   }, []);
 
   return (
