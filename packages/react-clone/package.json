@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b -v && vite build",
+    "build": "tsc --build --clean && vite build",
     "serve:local": "npx serve -l 3000 -s dist",
     "start": "node ./server/server.js",
     "preview": "vite preview"

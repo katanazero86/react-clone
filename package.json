@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run dev -w @zero86/react-clone",
     "build": "npm run build -w @zero86/react-clone",
-    "serve:local": "npm run serve -w @zero86/react-clone",
+    "serve:local": "npm run serve:local -w @zero86/react-clone",
     "start": "npm run start -w @zero86/react-clone",
     "lint:components": "eslint --ext .js,.ts,.jsx,.tsx ./packages/components",
     "lint:react-clone": "eslint --ext .js,.ts,.jsx,.tsx ./packages/react-clone",
