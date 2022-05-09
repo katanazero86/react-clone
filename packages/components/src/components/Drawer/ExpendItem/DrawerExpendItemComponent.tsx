@@ -6,13 +6,15 @@ interface DrawerExpendItemComponentProps {
   handleExpend?(property: string): void;
   isExpend?: boolean;
   label?: string;
-  expendItems?: { label?: string }[];
+  path?: string;
+  expendItems?: { label?: string; path?: string }[];
 }
 
 export default function DrawerExpendItemComponent({
   handleExpend,
   isExpend = false,
   label = '',
+  path = '',
   expendItems = [],
 }: DrawerExpendItemComponentProps) {
   const onClick = (e: React.SyntheticEvent) => {
@@ -22,13 +24,15 @@ export default function DrawerExpendItemComponent({
 
   return (
     <>
-      <li onClick={onClick} data-name={label}>
+      <li onClick={onClick} data-name={label} data-path={path}>
         {label} {isExpend ? <ChevronDown /> : <ChevronRight />}
       </li>
       {isExpend && (
         <ul>
           {expendItems.map(item => (
-            <li key={item.label}>{item.label}</li>
+            <li key={item.label} data-path={item.path}>
+              {item.label}
+            </li>
           ))}
         </ul>
       )}

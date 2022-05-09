@@ -1,4 +1,6 @@
+import * as React from 'react';
 import { useRef, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import classes from './DrawerComponent.module.scss';
 import clsx from 'clsx';
 import DrawerItemComponent from './Item/DrawerItemComponent';
@@ -22,6 +24,9 @@ interface DrawerComponentProps {
 }
 
 export default function DrawerComponent({ open, close, items = [] }: DrawerComponentProps) {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const drawerRef = useRef<HTMLDivElement>(null);
   const onClick = (e: React.SyntheticEvent) => {
     const refEl = drawerRef?.current;
@@ -44,17 +49,22 @@ export default function DrawerComponent({ open, close, items = [] }: DrawerCompo
     }
   };
 
-  // const handleItemClick = (e: React.SyntheticEvent) => {
-  //   console.log(e.target);
-  // };
-
-  console.log('test..asdasd');
+  const handleItemClick = (e: React.SyntheticEvent) => {
+    e.stopPropagation();
+    const targetEl = e.target as HTMLElement;
+    const path = targetEl.dataset.path;
+    if (path === location.pathname) {
+      navigate(0);
+    } else {
+      if (path !== '' && path !== undefined) navigate(path);
+    }
+  };
 
   return (
     <div className={clsx(classes.drawer, open ? classes.drawerOpen : '')} onClick={onClick} ref={drawerRef}>
       <div className={clsx(classes.side)}>
         <h2>MENU</h2>
-        <ul>
+        <ul onClick={handleItemClick}>
           {items.map(item => {
             if (item.isExpend) {
               return (
