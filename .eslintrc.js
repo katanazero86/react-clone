@@ -19,6 +19,7 @@ module.exports = {
     'no-extra-semi': 'error',
     '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/ban-ts-comment': 'off',
     'react/react-in-jsx-scope': 'off',
   },
 };

@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useEffect, useState } from 'react';
 import classes from './CoinGraphComponent.module.scss';
 import clsx from 'clsx';
-import Chart from 'react-apexcharts';
+import ReactApexChart from 'react-apexcharts';
 import { ApexOptions } from 'apexcharts';
 import {
   CardComponent,
@@ -302,7 +302,9 @@ export default function CoinGraphComponent() {
         </div>
         <div className="row">
           <div className="col-12">
-            <Chart options={options} series={series.series} type="line" width="100%" height={360} />
+            {/*
+ // @ts-ignore */}
+            <ReactApexChart options={options} series={series.series} type="line" width="100%" height={360} />
           </div>
         </div>
       </CardContentComponent>

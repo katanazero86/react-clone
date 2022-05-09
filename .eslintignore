@@ -1,3 +1,4 @@
 node_modules/*
 **/node_modules/*
 packages/react-clone/dist/*
+packages/react-clone/build/*
