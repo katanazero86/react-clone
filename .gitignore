@@ -7,3 +7,5 @@ build
 
 **/dist
 **/build
+**/tsconfig.node.tsbuildinfo
+**/tsconfig.tsbuildinfo
