@@ -5,6 +5,7 @@ import DefaultLayoutComponent from '../components/Layouts/DefaultLayoutComponent
 import { SpinnerDotComponent } from '@zero86/components';
 
 const Home = React.lazy(() => import('../pages/Home/Home'));
+const About = React.lazy(() => import('../pages/About/About'));
 const Signin = React.lazy(() => import('../pages/Signin/Signin'));
 const Signup = React.lazy(() => import('../pages/Signup/Signup'));
 
@@ -18,6 +19,16 @@ export const Router = () => {
             <RequireAuth>
               <React.Suspense fallback={<SpinnerDotComponent />}>
                 <Home />
+              </React.Suspense>
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="about"
+          element={
+            <RequireAuth>
+              <React.Suspense fallback={<SpinnerDotComponent />}>
+                <About />
               </React.Suspense>
             </RequireAuth>
           }
