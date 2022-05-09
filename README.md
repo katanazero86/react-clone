@@ -57,3 +57,35 @@ Peer dependencies(피어 종속성) 에서도 npm v7 은 피어 종속성을 자
     ├── components
     └── react-clone
 ```
+
+---
+
+> ### React-clone 소개 <br/>
+> React.js, React-router, Recoil, HTML5, CSS3, Vite, SCSS, TypeScript, React-query
+- Owner & Maintainer
+- github. [https://github.com/katanazero86/react-clone](https://github.com/katanazero86/react-clone)
+- Vite 를 이용하여 프로젝트 생성(Node.js >= 12.0.0) : https://vitejs.dev/
+- Dashboard 클론코딩 입니다. 처음에 로그인페이지가 뜨면, ID 및 PW 를 입력하고 로그인하면 해당 페이지로 이동합니다.
+- npm workspace 로 프로젝트가 구성되어있습니다.(npm 7 버전 이상)
+- /packages/components 패키지는 워크스페이스내 패키지들이 공유한 컴포넌트를 관리하는 패키지입니다.
+- scss 를 사용했으며, css module 방식으로 작성이 되어있으며 TypeScript 기반으로 컴포넌트와 코드들이 작성되어 있습니다.
+
+---
+
+> - 프로젝트 실행방법(execution)
+> ```
+> node moudle install : npm i or npm install
+> dev : npm run dev
+> build : npm run build
+> serve:local : npm run serve:local
+> ```
+
+---
+
+> ### project 배포(deploy) <br/>
+> - https://www.heroku.com/ - 헤로쿠 클라우드 플랫폼을 이용하여 배포
+> - 헤로쿠 배포를 위한 express 서버 모듈 설치 및 server/server.js 작성
+> - 헤로쿠가 서버를 실행할 수 있도록, package.json 스크립트 추가(`"start": "node ./server/server.js"`)
+> - https://react-zero86.herokuapp.com/
+
+---
